@@ -1,0 +1,907 @@
+<!--
+    |_
+    (O)
+    |#|
+    '-'
+   
+Main ingredient : DOM (no jQuery, no Bootstrap)
+
+
+
+This is a mobile with some basic apps in it.
+from a bot to video player😁, 
+20+1 apps crafted on a basic theme.💝
+
+Name : Android OS
+version : 2.0
+-->
+
+<!--
+    by default connection type will be WiFi
+    iOS devices don't support battery type, so default is 100%
+    
+    +-*/= shortcut to close calculator😁 
+    🥚command 'connect' in terminal is necessary, get a code, write that in phone & call🥚
+-->
+<!DOCTYPE html>
+<html id="html">
+<head>
+    <title>Mobile</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Barlow|Baloo+Bhaijaan|Caveat|Indie+Flower|Monoton|Pattaya|Satisfy|Shadows+Into+Light|Spicy+Rice|VT323" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="android.css">
+</head>
+<body id="body" onload="if(navigator.onLine==true){document.getElementById('mobload').style.display='none';}else{alert('Connect to network')}">
+<!-- try reloading the code, if the loader is slow -->
+<div class="mobileloader" id="mobload"><i class="fa fa-circle-o-notch fa-spin"></i></div>
+<div id="notific" class="notific" align="right"><span id="usericon"></span> <span id="musicnotico"></span> <span id="wifiico"></span> <b><span id="batt"></span> &nbsp; <span id="times"></span></b></div><br/><br/>
+<div class="content" id="content">
+       <div class="mapp" id="mapp1" onclick="openassistant()" align="center" title="Assistant">
+           <img src="https://3.bp.blogspot.com/-_vSOM2NjQUs/W4ztNZgzVYI/AAAAAAAAEqk/Am3o5MESpPgXaxpHDLLkFICGRD5CBi4GwCLcBGAs/s320/assi.jpg" width="70" height="70" id="ap1"/><br/>
+           <span class="apname" align="center" id="aptxt1">Assistant</span>
+       </div>
+       <div class="mapp" id="mapp2" onclick="obrowser()" align="center" title="Browser">
+        <img src="https://2.bp.blogspot.com/--kHORty-sZI/XERw7zeB4jI/AAAAAAAAJuc/2gKNWmTWdDAH1EPn00Z9qDk6370pBmu5wCLcBGAs/s1600/PicsArt_01-20-06.44.21.png" width="70" height="70" id="ap4"  /><br/>
+        <span class="apname" align="center" id="aptxt2">Browser</span> 
+    </div>
+    <div class="mapp" id="mapp3" onclick="showcalc()" align="center" title="Calculator">
+        <img src="https://1.bp.blogspot.com/-cW_hfIWmSHQ/XG7gzh0RSMI/AAAAAAAAKrs/ATbYZE0vCtsPRfynp68tr6J39I0siXrYwCPcBGAYYCw/s1600/PicsArt_02-21-11.11.32.png?fbclid=IwAR0Ha7B6QTAcUDIkmKGupQ2a04hr8EA9S-Kl5vl-n0-wxVugysJsVKHq-pI" width="70" height="70" id="ap2" /><br/>
+        <span class="apname" align="center" id="aptxt3">Calculator</span>
+    </div>
+    <div class="mapp" id="mapp4" onclick="cal()" align="center" title="Calendar">
+        <img src="https://2.bp.blogspot.com/-FlZ4r2MkScU/W3KkiwZIn4I/AAAAAAAADzM/HkCkeqNt1WInjM1YAd6ZS4JOtJ1eA8oWQCLcBGAs/s200/calendar.jpg" width="70" height="70" id="ap3" /><br/>
+        <span class="apname" align="center" id="aptxt4">Calendar</span>
+    </div>
+    <div class="mapp" id="mapp5" onclick="showclock()" align="center" title="Clock">
+        <img src="https://3.bp.blogspot.com/-Oho9jBzmuTY/W4zsTSAWcyI/AAAAAAAAEqE/0Y2-hyamH7YKq47a5aPIt7Wdj3KYKmWYACLcBGAs/s320/clock.jpg" width="70" height="70" id="ap5" /><br/>
+        <span class="apname" align="center" id="aptxt5">Clock</span>
+    </div>
+    <div class="mapp" id="mapp6" onclick="odevmode()" align="center" title="Developer Mode">
+        <img src="https://2.bp.blogspot.com/-X3Do6HiExgU/XIJnn214PVI/AAAAAAAALQs/Z1DeTmDqGH4yJfM6dxONM2jhujnYsvrGQCLcBGAs/s1600/PicsArt_03-08-06.43.31.png" width="70" height="70" id="ap6" /><br/>
+        <span class="apname" align="center" id="aptxt6">Developer</span>
+    </div>
+    <div class="mapp" id="mapp7" onclick="showdevs()" align="center" title="Devs☺">
+        <img src="https://3.bp.blogspot.com/--I8y0L5sInI/W4zsbBqvnYI/AAAAAAAAEqI/1TMS_gPGbF4EqmGZrqnURs8qs99q-ldwQCLcBGAs/s320/dev.jpg" width="70" height="70" id="ap7" /><br/>
+        <span class="apname" align="center" id="aptxt7">Devs</span>
+    </div>
+    <div class="mapp" id="mapp21" align="center" style="display: none" onclick="omeme()" title="Easter Egg">
+        <img src="https://4.bp.blogspot.com/-GTkeEP8yrA0/XIJpguYziFI/AAAAAAAALQ4/anTozHwiZTAx5zx6bev1zw2fyJj0D_tDwCLcBGAs/s1600/PicsArt_03-08-06.51.16.png" width="70" height="70" id="ap21" /><br/>
+        <span class="apname" align="center" id="aptxt21">Easter Egg</span>
+    </div>
+    <div class="mapp" id="mapp8" align="center" onclick="openmaila()" title="E-mail">
+        <img src="https://3.bp.blogspot.com/-02Uy6CDhxSY/W3KkkHKf2II/AAAAAAAADzQ/GdALKATh7NUWFV_cZ3ClZ_nvpWwWuKZAwCLcBGAs/s200/email.jpg" width="70" height="70" id="ap8" /><br/> 
+        <span class="apname" align="center" id="aptxt8">E-mail</span>
+    </div>
+    <div class="mapp" id="mapp9" onclick="maps()" align="center" title="Maps">
+        <img src="https://2.bp.blogspot.com/-h7l3UsgWNwk/XG7g2KzqEDI/AAAAAAAAKr4/G6GLcMQTFD8sLXQy2YUpjT1ot036XfKBACPcBGAYYCw/s1600/PicsArt_02-21-11.13.57.png" width="70" height="70" id="ap9" /><br/>
+        <span class="apname" align="center" id="aptxt9">Maps</span>
+    </div>
+    <div class="mapp" id="mapp10" onclick="musicplayer()" align="center" title="Music">
+        <img src="https://4.bp.blogspot.com/-K3ERktIEtUc/W3KporvaujI/AAAAAAAAD0A/UjaGfe7wjy8wz3ApFj82Wc0D9KvbnE0WQCLcBGAs/s200/music.jpg" width="70" height="70" id="ap10" /><br/>
+        <span class="apname" align="center" id="aptxt10">Music</span>
+    </div>
+    <div class="mapp" id="mapp11" onclick="phone()" align="center" title="Phone">
+        <img src="https://4.bp.blogspot.com/-GDCDaAXKDmM/W4z7VPIB9sI/AAAAAAAAEq0/rETlH77WjCkiT2LYKUS1A0yXc3syxHq-gCLcBGAs/s200/contact.jpg" width="70" height="70" id="ap11" /><br/>
+        <span class="apname" align="center" id="aptxt11">Phone</span>
+    </div>
+    <div class="mapp" id="mapp12" onclick="ophotoeditor()" align="center" title="Photo Editor">
+        <img src="https://1.bp.blogspot.com/-ICEkNDT7n38/XG7g1aCPXQI/AAAAAAAAKr0/5c_ytrTO28AD5cNrpCX67s9gT1gQHJqxgCPcBGAYYCw/s1600/PicsArt_02-21-11.12.59.png" width="70" height="70" id="ap12" /><br/>
+        <span class="apname" align="center" id="aptxt12">Photo Editor</span>
+    </div>
+    <div class="mapp" id="mapp13" onclick="settings()" align="center" title="Settings">
+        <img src="https://1.bp.blogspot.com/-kty_OnX3F68/W3Kkn4m6FRI/AAAAAAAADzY/ps3ydaz2mtQqWSNtjR6kzP2Mcl3_fYJwQCLcBGAs/s200/setting.jpg" width="70" height="70" id="ap13" /><br/>
+        <span class="apname" align="center" id="aptxt13">Settings</span>
+    </div>
+    <div class="mapp" id="mapp14" align="center" onclick="sololearnf()" title="SoloLearn❤">
+        <img src="https://1.bp.blogspot.com/-O6iKW1vxmWw/W4zroSP3XMI/AAAAAAAAEp4/9FBtAEDCZN0RFM4NwoPWp4H5FwNjGJ5TgCLcBGAs/s320/sololearn.jpg" width="70" height="70" id="ap14" /><br/>
+        <span class="apname" align="center" id="aptxt14">SoloLearn</span>
+    </div>
+    <div class="mapp" id="mapp15" onclick="stopwatchz()" align="center" title="Stopwatch">
+        <img src="https://4.bp.blogspot.com/-SY74N0-5Hfg/W4zsj49I7JI/AAAAAAAAEqQ/xjC6cAdsvSszKHWbU1CfIiMibYMIuNv1wCLcBGAs/s320/stop_watch.jpg" width="70" height="70" id="ap15" /><br/>
+        <span id="aptxt15" class="apname" align="center">Stopwatch</span>
+    </div>
+    <div class="mapp" id="mapp16" onclick="oterminal()" align="center" title="Terminal">
+        <img src="https://4.bp.blogspot.com/-CKwuylBjW7M/XDspVA-ECzI/AAAAAAAAJsQ/49EfJ9rbYaIeOnjiSV32tkMXPnA9GlimgCLcBGAs/s1600/PicsArt_01-13-05.48.26.png" width="70" height="70" id="ap16"/><br/>
+        <span class="apname" align="center" id="aptxt16">Terminal</span>
+    </div>
+    <div class="mapp" id="mapp17" onclick="texteditor()" align="center" title="TextEditor">
+        <img src="https://2.bp.blogspot.com/-hBduXd8cXJQ/XG7gzHsmC4I/AAAAAAAAKrQ/8nou6nYVDyAAPuz286lNfJs3a47twfhFQCLcBGAs/s1600/PicsArt_02-21-11.10.37.png" width="70" height="70" id="ap17" /><br/>
+        <span class="apname" align="center" id="aptxt17">Text Editor</span>
+    </div>
+    <div class="mapp" id="mapp18" onclick="themesz()" align="center" title="Themes">
+        <img src="https://4.bp.blogspot.com/-e0NY_w6XjVs/XG7gyuXwz7I/AAAAAAAAKro/4x_KWgWckV48w9FWtJf5rZyyLR80KBTBwCPcBGAYYCw/s1600/PicsArt_02-21-11.11.05.png" width="70" height="70" id="ap18" /><br/>
+        <span class="apname" align="center" id="aptxt18">Themes</span>
+    </div>
+    <div class="mapp" id="mapp19" onclick="unitconverter()" align="center" title="Unit Converter">
+        <img src="https://3.bp.blogspot.com/-MlzUPm72Agw/XG7g1ZVfrWI/AAAAAAAAKr4/hkxUh577rEILNRD3ssQ03GpUUN6V8Q2LwCPcBGAYYCw/s1600/PicsArt_02-21-11.13.30.png" width="70" height="70" id="ap19" /><br/>
+        <span class="apname" align="center" id="aptxt19">Unit Converter</span>
+    </div>
+    <div class="mapp" id="mapp20" onclick="videos()" align="center" title="Videos">
+        <img src="https://2.bp.blogspot.com/-T593dY1AZ-w/W3Kpy3jSYWI/AAAAAAAAD0I/AT386V5s080EI9qsiyO_PtXl2bzyC4snACLcBGAs/s200/youtube.jpg" width="70" height="70" id="ap20" /><br/> 
+        <span class="apname" align="center" id="aptxt20">Videos</span>
+    </div>
+</div>
+
+
+
+
+<!--APPS-->
+<!--Assistant-->
+<div id="botcontent" class="apbtheme">
+    <div id="botplayground" class="botplayground">
+        <br/>
+        <div class='message'>About<hr/><span>1. Informal chat<br/>2. Roll A Die<br/>3. Random Card<br/>4. Flip a coin<br/>5. Clear -> Clear Screen<br/>6. Table( _ Reuires a number)<br/>7. Date, Time<br/>8. Close</span></div>
+    </div>
+    <div id="banthis" class="banthis">
+        <div class="banthisz" align="center">
+            <span href="#"><i class="fa fa-ban" style="color:#ff6666"></i> <b>BLOCKED</b> <i class="fa fa-ban" style="color:#ff6666"></i></span><hr style="color:#ddd;" size="4"/>
+            <span style="font-color:#fff;font-size:20px;">Run the Code again 😛</span>
+        </div>
+    </div>
+    <div class="backbtnz">
+    <button onclick="closebot()" class="closeasstbtn" id="closeasstbtn">Close &times;</button>
+    <form onsubmit="return false;" class="botinputform">
+        <input type="text" id="uinput" class="textbotmessage" oninput="checkasinp()" placeholder="Type a message" autocomplete="off" autofocus  /><button class="sendbotbutton" id="botmessagesend" disabled="true" onclick="assistantwork()"><i class="fa fa-paper-plane"></i></button>
+    </form>
+</div>
+</div>
+
+<!--Browser-->
+<div class="mainhomescr apbtheme" id="browser">
+    <div class="inputxzz">
+        <h2 class="browselogo">Bing!</h2><br/>
+        <form onsubmit="return false">
+            <input type="text" class="browinp" id="browinp" autocomplete="off" /><br/><br/>
+            <button onclick="searchthis()" class="browsearchbtn">Bing Search</button><br/>&nbsp;
+        </form>
+    </div>
+    <br/>
+    <div class="mainscr" id="mainscr">
+        <iframe id="ibrowser" width="100%" height="100%"></iframe>
+    </div>
+    <div class="browserap" id="browbtns">
+        <span class="browbbtns" onclick="cbrowser()"><i class="fa fa-times fa-fw"></i></span>
+        <span class="browbbtns" onclick="history.back();"><i class="fa fa-arrow-left fa-fw"></i></span>
+        <span class="browbbtns" onclick="closeifmbr()"><i class="fa fa-home fa-fw fa-fw"></i></span>
+        <span class="browbbtns" onclick="history.forward();"><i class="fa fa-arrow-right"></i></span>
+        <span class="browbbtns" id="browinco" onclick="refreshsear()"><i class="fa fa-refresh fa-fw"></i></span>
+    </div>
+</div>
+
+
+
+<!--Calculator-->
+<div id="calculator" class="apbtheme">
+<input type="text" id="calcinput" placeholder="0" disabled="true" /><br/>
+<input type="text" id="calcoutput" placeholder="0" disabled="true" />
+<table width="100%" border="0" class="calctable">
+    <tr align="center">
+        
+        <td onclick="addnum('(')" class="calcbut"><span class="calcnum">(</span></td>
+        <td onclick="addnum(')')" class="calcbut"><span class="calcnum">)</span></td>
+        <td onclick="rvcalc()" class="calcbut"><span class="calcnum"><i class="fa fa-arrow-left"></i></span></td>
+        <td onclick="addnum('+')" width="25%" id="calcnum1"><span class="calcnum">+</span></td>
+    </tr>
+    <tr align="center">
+        <td onclick="addnum('7')" width="25%" class="calcbut"><span class="calcnum">7</span></td>
+        <td onclick="addnum('8')" width="25%" class="calcbut"><span class="calcnum">8</span></td>
+        <td onclick="addnum('9')" width="25%" class="calcbut"><span class="calcnum">9</span></td>
+        <td onclick="addnum('-')" id="calcnum2"><span class="calcnum">-</span></td>
+
+    </tr>
+    <tr align="center">
+        <td onclick="addnum('4')" class="calcbut"><span class="calcnum">4</span></td>
+        <td onclick="addnum('5')" class="calcbut"><span class="calcnum">5</span></td>
+        <td onclick="addnum('6')" class="calcbut"><span class="calcnum">6</span></td>
+        <td onclick="addnum('*')" id="calcnum3"><span class="calcnum">*</span></td>
+    </tr>
+    <tr align="center">
+        <td onclick="addnum('1')" class="calcbut"><span class="calcnum">1</span></td>
+        <td onclick="addnum('2')" class="calcbut"><span class="calcnum">2</span></td>
+        <td onclick="addnum('3')" class="calcbut"><span class="calcnum">3</span></td>
+        <td onclick="addnum('/')" id="calcnum4"><span class="calcnum">/</span></td>
+    </tr>
+    <tr align="center">
+        <td onclick="ravcalc()" ondblclick="ccalc()" class="calcbut"><span class="calcnum">C</span></td>
+        <td onclick="addnum('0')"  class="calcbut"><span class="calcnum">0</span></td>
+        <td onclick="addnum('.')" class="calcbut"><span class="calcnum">.</span></td>
+        <td onclick="outputit()"  class="calcbut" id="calcnum5"><span class="calcnum"><b>=</b></span></td>
+    </tr>
+</table>
+</div>
+
+
+<!--Calendar-->
+<div class="apbtheme" id="cal">
+    <br/>
+    <div style="padding:5px;height:calc(100vh - 32px);overflow:scroll;"><br/>
+        <span align="center" class="calbtns"><button onclick="prevcal()" class="calbtn"><i class="fa fa-angle-left"></i></button></span><b><span align="center" class="calmonths" id="caption"></span></b><span  align="center" class="calbtns"><button onclick="nextcal()" class="calbtn"><i class="fa fa-angle-right"></i></button></span>
+        <br/><br/>
+        <table width="90%" align="center" border="0" id="caltable" class="caltable"></table>
+        <br/><br/>&nbsp;
+        <div class="backbtnz" align="center"><button onclick="calhide()" style="justify-content:center" class="closeappbtn">Close &times;</button></div>
+    </div>
+</div>
+
+
+
+
+
+
+<!--Clock-->
+<div id="clock" class="apbtheme" align="center">
+    <div class="mainclock">
+        <br/><br/><br/>
+    <div class="clocktime">
+        <span id="clockhour"></span> : <span id="clockminute"></span> <span id="clocksecond" class="clocksecond"></span>
+    </div>
+    <span id="yearnow"></span> <span id="monthnow"></span> <span id="daynow"></span>, <span id="weekday"></span>
+    <br/><br/>
+    <table border="1" width="80%" style="border-collapse: collapse;">
+        <tr align="center">
+            <td width="50%">🇺🇸 California <span style="opacity:0.7;">(-8:00)</span></td>
+            <td width="50%" id="timezone1"></td>
+        </tr>
+        <tr align="center">
+            <td>🇲🇽 Mexico <span style="opacity:0.7;">(-6:00)</span></td>
+            <td id="timezone13"></td>
+        </tr>
+        <tr align="center">
+            <td>🇨🇦 Montreal <span style="opacity:0.7;">(-5:00)</span></td>
+            <td id="timezone2"></td>
+        </tr>
+        <tr align="center">
+            <td>🇦🇷 Buenos Aires <span style="opacity:0.7;">(-3:00)</span></td>
+            <td id="timezone12"></td>
+        </tr>
+        <tr align="center">
+            <td>🇧🇷 Rio de Janerio <span style="opacity:0.7;">(-2:00)</span></td>
+            <td id="timezone8"></td>
+        </tr>
+        <tr align="center">
+            <td>🇬🇧 London <span style="opacity:0.7;">(0:00)</span></td>
+            <td id="timezone3"></td>
+        </tr>
+        <tr align="center">
+            <td>🇮🇹 Rome <span style="opacity:0.7;">(+1:00)</span></td>
+            <td id="timezone9"></td>
+        </tr>
+        <tr align="center">
+            <td>🇷🇺 Moscow <span style="opacity:0.7;">(+3:00)</span></td>
+            <td id="timezone7"></td>
+        </tr>
+        <tr align="center">
+            <td>🇦🇪 Dubai <span style="opacity:0.7;">(+4:00)</span></td>
+            <td id="timezone4"></td>
+        </tr>
+        <tr align="center">
+            <td>🇮🇳 New Delhi <span style="opacity:0.7;">(+5:30)</span></td>
+            <td id="timezone10"></td>
+        </tr>
+        <tr align="center">
+            <td>🇳🇵 Kathmandu <span style="opacity:0.7;">(+5:45)</span></td>
+            <td id="timezone11"></td>
+        </tr>
+        <tr align="center">
+            <td>🇨🇳 Beijing <span style="opacity:0.7;">(+8:00)</span></td>
+            <td id="timezone5"></td>
+        </tr>
+        <tr align="center">
+            <td>🇯🇵 Tokyo <span style="opacity:0.7;">(+9:00)</span></td>
+            <td id="timezone6"></td>
+        </tr>
+    </table>
+    <br/>&nbsp;
+</div>
+    <div class="backbtnz" align="center"><button onclick="hideclock()" class="closeappbtn">Close &times;</button></div>
+</div>
+
+
+
+<!--Developer Mode-->
+<div class="apbtheme" id="devmode">
+    <br/>
+    <div style="height:calc(100vh - 32px);overflow:scroll;" align="center">
+        <br/>
+        <textarea class="textarearep" id="devappinp" rows="7" placeholder="console.log('Developer Mode -beta');" maxlength="150"></textarea>
+        <button class="cldevbtn" onclick="document.getElementById('userwcdev').style.width = '100%';">User Scripts</button>
+        <button class="cldevbtn" onclick="document.getElementById('helpdev').style.width = '100%';">Help</button> <button onclick="devfunc()" class="cldevbtn"> RUN <i class="fa fa-caret-right fa-fw"></i></button>
+        <br/>&nbsp;
+        <div id="devfunc" class="devfunc" align="left">JavaScript error exceptions:<br/></div>
+    </div>
+    <div class="backbtnz" align="center"><button onclick="cdevmode()" class="closeappbtn">Close &times;</button>
+    </div>
+</div>
+<div class="apbtheme" id="helpdev">
+    <br/>
+    <div class="userwcdevz">
+        <h2 align="center">Help - Developer Mode</h2>
+        <h3>Example</h3>
+        <ul class="helpdevul">
+            <li><code>console.log("Hello World!");</code></li>
+            <li><code>alert('Hey');</code></li>
+            <li><code>5/2<br/><span style="color:#0b0">//Simple Maths Calculations</span></code></li>
+            <li><code>var a = 1<br/>var b = 3;<br/>console.log(a+b);</code></li>
+        </ul>
+        <h3>In Code</h3>
+        <ul class="helpdevul">
+            <li><code class="devlcodefun">worldclockshouldwork(hour, minute);<br/><span style="color:#0b0;">//hour & minute in parameter</span></code></li>
+            <li><code class="devlcodefun">seticosize('size')<br/><span style="color:#0b0;">//size = small or medium or large</span></code></li>
+            <li><code class="devlcodefun">themcolo('#abc');<br/> <span style="color:#0b0;">//write color name instead #abc</span></code></li>
+        </ul>
+        <h3>Open Apps</h3>
+        <ul class="helpdevul">
+            <li>Assistant - <code class="devlcodefun">openassistant()</code></li>
+            <li>Browser - <code class="devlcodefun">obrowser()</code></li>
+            <li>Calculator - <code class="devlcodefun">showcalc()</code></li>
+            <li>Calendar - <code class="devlcodefun">cal()</code></li>
+            <li>Clock - <code class="devlcodefun">showclock()</code></li>
+            <li>Developer - <code class="devlcodefun">odevmode()</code></li>
+            <li>Devs - <code class="devlcodefun">showdevs()</code></li>
+            <li>E-mail - <code class="devlcodefun">openmaila()</code></li>
+            <li>Maps - <code class="devlcodefun">maps()</code></li>
+            <li>Music - <code class="devlcodefun">musicplayer()</code></li>
+            <li>Phone - <code class="devlcodefun">phone()</code></li>
+            <li>Settings - <code class="devlcodefun">settings()</code></li>
+            <li>Sololearn - <code class="devlcodefun">sololearnf()</code></li>
+            <li>Stopwatch - <code class="devlcodefun">stopwatchz()</code></li>
+            <li>Terminal - <code class="devlcodefun">oterminal()</code></li>
+            <li>Text Editor - <code class="devlcodefun">texteditor()</code></li>
+            <li>Themes - <code class="devlcodefun">themesz()</code></li>
+            <li>Unit Converter - <code class="devlcodefun">unitconverter()</code></li>
+            <li>Videos - <code class="devlcodefun">videos()</code></li>
+        </ul>
+    </div>
+
+    <div class="backbtnz" align="center"><button onclick="document.getElementById('helpdev').style.width = '0';" class="closeappbtn">Back <i class="fa fa-mail-reply fa-fw"></i></button></div>
+</div>
+<div class="apbtheme" id="userwcdev">
+    <br/>
+    <div class="userwcdevz" id="userwcdevz">
+        <h2 align="center">User Scripts</h2><hr/></div>
+    <div class="backbtnz" align="center"><button onclick="document.getElementById('userwcdev').style.width = '0';" class="closeappbtn">Back <i class="fa fa-mail-reply fa-fw"></i></button></div>
+</div>
+
+
+
+<!--Devs-->
+<div id="devs" class="apbtheme">
+    <br/>
+    <div style="height:calc(100vh - 32px);overflow:scroll;">
+    <table width="100%" border="0">
+        <tr align="center">
+            <td width="50%"><span style="float:left; opacity:0.9;border-radius:4px;padding:4px;" id="setbadge2">Devs</span><br/><br/><a href="https://www.sololearn.com/Profile/487380" class="devs"><img src="https://api.sololearn.com/Uploads/Avatars/487380.jpg" width="60px" class="setava" /><br/>Jaydeep Khatri</a></td>
+            <td width="50%"><br/><br/><a href="https://www.sololearn.com/Profile/4714357" class="devs"><img src="https://api.sololearn.com/Uploads/Avatars/4714357.jpg" width="60px" class="setava" /><br/>Shudarshan Rai👑</a></td>
+        </tr>
+        <tr>
+            <td><span style="float:left; opacity:0.9;border-radius:4px;padding:4px;" id="setbadge5">Credits</span>
+            <br/>
+            <ul>
+                <li>SoloLearn Q&amp;A Discussions</li>
+                <li>W3schools</li>
+                <li>StackOverFlow</li>
+            </ul>
+            </td>
+        </tr>
+    </table><br/>
+</div>
+    <div class="backbtnz" align="center"><button onclick="cdevs()" class="closeappbtn">Close &times;</button></div>
+</div>
+
+
+
+<!--Easter //Meme-->
+<div class="banthis" style="z-index: 3; background-color:#111;" id="memeap">
+    <div style="height:calc(100vh - 32px); overflow:scroll;" align="center">
+        <img id="memewallp" width="80%" height="80%" style="border-radius:0; margin-top:20px; border:2px solid #fff;"/><br/>
+        <button onclick="changememe()" class="cldevbtn">Next</button>
+    </div>
+    <div class="backbtnz" align="center">
+        <button class="closeappbtn" onclick="cmeme()">Close &times;</button>
+    </div>
+</div>
+<!-- Memes are taken from Google search (images) result & fb/i am programmar, i have no life (group) -->
+
+
+<!--Email-->
+<div class="apbtheme" id="email">
+    <br/>
+    <div style="padding:20px;">
+        <span id="by">12:50&#32;By Dev's<span id="dev">&#32;<i class="fa fa-user-circle"></i></span></span><br>
+        <div class="emailmsg">
+            - Hello there, We are few step away from new update.(V2.0)<br/>
+            New Update Includes<br/>
+            - Photo Editor<br/>
+            - Unit Converter<br/>
+            - Maps<br/>
+            - Developer Mode<br/>
+            - Bug fix<br/>
+            - Optimized system performance<br/>
+            - Leave your suggestions in the comment
+        <pre align="right">
+                        - Devs
+         </pre>
+        </div><br/><br/><br/>
+        <span id="by">11:05&#32;By Dev's<span id="dev">&#32;<i class="fa fa-user-circle"></i></span></span><br>
+        <div class="emailmsg">
+            - That was a overwhelming response to the update-1, so we are here with the second update🔥<br/>
+            - Thanks to SoloLearn for selecting this code as <a href="https://www.sololearn.com/post/63757/">Code of the Month</a>🙏😍🔥<br/>
+            - supports iOS<br/>
+            - user color in themes (terminal -&gt; connect)<br/>
+            - incognito mode in browser<br/>
+            - email reply<br/>
+            - Secret Easter Egg, for MeMes💻<br/>
+            - Leave your suggestions in the comment
+        <pre align="right">
+                        - Devs
+         </pre>
+        </div>
+       </div>
+        <button onclick="closeemail()" class="closeemailappbtn" id="closeembtn">Close &times;</button><button onclick="replymail()" class="replyemailbtn" id="repmaibtn">Reply <i class="fa fa-mail-reply"></i></button>
+</div>
+<div class="apbtheme" id="mailreppal">
+    <br/><br/>
+    <input type="email" class="inputmaad" placeholder="From :" />
+    <input type="email" class="inputmaad" placeholder="To :" />
+    <input type="email" class="inputmaad" placeholder="Cc/Bcc :" />
+    <textarea rows="8" class="textarearep" placeholder="Compose..."></textarea><br/><br/>
+    <button onclick="creplymail()" class="closeemailappbtn" id="closeembtnc">Close &times;</button>
+    <button class="replyemailbtn" id="repmaibtnc"><i class="fa fa-paperclip"></i> Attach</button>
+</div>
+
+
+
+<!--Maps-->
+<div class="apbtheme mapmainscr" id="map">
+    <br/>
+    <div class="mapforinp">
+        <h2>Maps</h2>
+        <form onsubmit="return false;">
+            <input type="text" id="mapval" class="videoinputuser" placeholder="City" /><br/>
+            <button onclick="mapfin()" class="cldevbtn" style="margin-top:3px;">Search</button>
+        </form>
+    </div>
+    <div class="mainmap" id="mainmap">
+        <br/>
+        <iframe id="mappp" width="100%" height="100%"></iframe>
+    </div>
+    <div class="backbtnz" align="center">
+        <button onclick="cmaps()" class="closeappbtn" id="closemapbtn">Close &times;</button>
+        <button onclick="bmmaps()" class="closeappbtn" id="closemapbtn1" style="display: none">Back <i class="fa fa-mail-reply"></i></button>
+    </div>
+</div>
+
+
+
+<!--Music-->
+<div id="musicplayer" class="apbtheme">
+    <div class="mainmusicb">
+    <div id="dancebars" class="dancebars" align="center">
+        <ul class="musicbars">
+        <li id="dnd1" class="musicstic"></li>
+        <li id="dnd2" class="musicstic"></li>
+        <li id="dnd3" class="musicstic"></li>
+        <li id="dnd4" class="musicstic"></li>
+        <li id="dnd5" class="musicstic"></li>
+        <li id="dnd6" class="musicstic"></li>
+        <li id="dnd7" class="musicstic"></li>
+        <li id="dnd8" class="musicstic"></li>
+        <li id="dnd9" class="musicstic"></li>
+        <li id="dnd10" class="musicstic"></li>
+        </ul>
+    </div>
+    <div class="namedur">
+        <hr/>
+        <span class="songname" style="font-size:20px;" align="center" id="titlesong">Name of song</span>
+        <span class="songdur" id="ctime" align="center">Duration</span>
+        <span class="songrandom" id="songrandom" align="center" onclick="hitrandommusic()">Random</span>
+    </div>
+    <hr/>
+    <div class="seek" align="center"><progress value="" min="0" max="100" id="seekvalue"></progress></div>
+    <br/>
+    <div style="width:100%">
+        <table style="padding:0;">
+            <tr>
+                <td class="tabmusic"><button class="mbutton" onclick="repeatthis()" id="musicbu1"><i class="fa fa-refresh fa-fw"></i></button></td>
+                <td class="tabmusic"><button class="mbutton" onclick="mbackward()" id="musicbu2"><i class="fa fa-backward fa-fw"></i></button></td>
+                <td class="tabmusic"><button class="mbutton" onclick="playmusic()" id="playbutton"><i class="fa fa-play fa-fw"></i></button><button class="mbutton" onclick="pausemusic()" id="pausebutton"><i class="fa fa-pause fa-fw"></i></button></td>
+                <td class="tabmusic"><button class="mbutton" onclick="mforward()" id="musicbu3"><i class="fa fa-forward fa-fw"></i></button></td>
+                <td class="tabmusic"><input type="range" min="0" max="1" value="0.7" step="0.01" class="volumeslider" oninput="volumecontrol(this.value)" /></td>
+                <td class="tabmusic"><button onclick="cmusicplayer()" class="closeappbtn">&times;</button></td>
+            </tr>
+        </table>
+    </div>
+    <div id="mloading" class="mloading" align="center"><span id="mstatus">&nbsp;</span></div>
+    </div>
+</div>
+
+
+
+<!--Phone-->
+<div id="phone" class="apbtheme">
+    <input id="inputnumber" type="text" class="inputnumber" maxlength="15" align="center" disabled />
+<table width="100%" border="0" class="keymtable">
+    <tr align="center">
+        <td width="33%" class="phonekeypad" onclick="phonenumin('1')"><span class="keyntable">1</span><br/><span class="keyatable">&alpha;</span></td>
+        <td width="33%" class="phonekeypad" onclick="phonenumin('2')"><span class="keyntable">2</span><br/><span class="keyatable">ABC</span></td>
+        <td width="33%" class="phonekeypad" onclick="phonenumin('3')"><span class="keyntable">3</span><br/><span class="keyatable">DEF</span></td>
+    </tr>
+    <tr align="center">
+        <td class="phonekeypad" onclick="phonenumin('4')"><span class="keyntable">4</span><br/><span class="keyatable">GHI</span></td>
+        <td class="phonekeypad" onclick="phonenumin('5')"><span class="keyntable">5</span><br/><span class="keyatable">JKL</span></td>
+        <td class="phonekeypad" onclick="phonenumin('6')"><span class="keyntable">6</span><br/><span class="keyatable">MNO</span></td>
+    </tr>
+    <tr align="center">
+        <td class="phonekeypad" onclick="phonenumin('7')"><span class="keyntable">7</span><br/><span class="keyatable">PQRS</span></td>
+        <td class="phonekeypad" onclick="phonenumin('8')"><span class="keyntable">8</span><br/><span class="keyatable">TUV</span></td>
+        <td class="phonekeypad" onclick="phonenumin('9')"><span class="keyntable">9</span><br/><span class="keyatable">WXYZ</span></td>
+    </tr>
+    <tr align="center">
+        <td class="phonekeypad" onclick="phonenumin('*')"><span class="keyntable">*</span></td>
+        <td class="phonekeypad" onclick="phonenumin('0')"><span class="keyntable">0</span><br/><span class="keyatable">+</span></td>
+        <td class="phonekeypad" onclick="phonenumin('#')"><span class="keyntable">#</span></td>
+    </tr>
+    <tr align="center">
+        <td class="phonekeypad" onclick="closephone()"><button class="closeappbtn">Close &times;</button></td>
+        <td onclick="phonecallit()"><span class="keyntable"><i class="fa fa-phone phoneico fa-fw"  id="phonecallbtn"></i></span><br/></td>
+        <td onclick="clearnum()"><span class="keyntable" ><i class="fa fa-long-arrow-left phoneico fa-fw" id="phonebackbtn"></i></span><br/></td>
+    </tr>
+</table>
+</div>
+
+
+
+
+
+
+
+<div class="apbtheme" id="photoeditor"><br/>
+<div style="height:calc(100vh - 32px); overflow:scroll;">
+    <div class="imgHere"><br/>
+          <center> <img src="https://picsum.photos/250/250/?random" class="iemimg" id="imagefil" /></center>
+        <div class="container">
+            <p contenteditable="true" id="name">Edit Image name <span id="blink">✎</span></p>
+        </div>
+    </div>
+    <br/><br/>   
+    <div class="styleControl">
+    <div class="iedefslidecontainer" id="ieslidecontainer">
+        Effects:<input type="range" min="0" max="100" id="inputrange" value="0" class="slider" oninput="mainimgedi(this.value)"/>
+    </div>
+    <div class="iedefslidecontainer" id="bRadius">
+        Border Radius:<input type="range" min="0" max="50" oninput="bradius(this.value);" id="baRadius" value="0" class="slider" />
+    </div>
+    <div class="iedefslidecontainer" id="ieborder">
+        Border:<input type="range" min="0" max="15" id="borderplus" value="0" class="slider" oninput="ieeborder(this.value)" />
+    <ul class="ietabs">
+        Border color:
+        <li class="iebortab ier" onclick="peborder = 'F44336';ieeborder(document.getElementById('borderplus').value);">red</li>
+        <li class="iebortab ieg" onclick="peborder = '4CAF50';ieeborder(document.getElementById('borderplus').value);">green</li>
+        <li class="iebortab ieb" onclick="peborder = '0f97f9';ieeborder(document.getElementById('borderplus').value);">blue</li>
+        <li class="iebortab iey" onclick="peborder = 'FF9800';ieeborder(document.getElementById('borderplus').value);">yellow</li>
+    </ul>
+    <ul class="ietabs">
+        Border style:
+        <li class="ieborstab solid" onclick="peborderstyle = 'solid';ieeborder(document.getElementById('borderplus').value);">Solid</li>
+        <li class="ieborstab dot" onclick="peborderstyle = 'dotted';ieeborder(document.getElementById('borderplus').value);">Dooted</li>
+        <li class="ieborstab dash" onclick="peborderstyle = 'dashed';ieeborder(document.getElementById('borderplus').value);">Dashed</li>
+        <li class="ieborstab double" onclick="peborderstyle = 'double';ieeborder(document.getElementById('borderplus').value);">Double</li>
+        <li class="ieborstab inset" onclick="peborderstyle = 'inset';ieeborder(document.getElementById('borderplus').value);">Inset</li>
+    </ul>
+    </div>
+    <div class="iedefslidecontainer" id="ierotate">
+        Rotate:<input type="range" min="0" max="180" id="imgrotate" oninput="ieroate(this.value);" value="0" class="slider" />
+    </div><br/>
+    <select oninput="changefil(this.value)" id="iebtn0" class="iebtns" onclick="ieimeff()">
+        <option selected disabled>Effects</option>
+        <option>Grayscale</option>
+        <option>Sepia</option>
+        <option>Saturate</option>
+        <option>Hue rotate</option>
+        <option>Invert</option>
+        <option>Opacity</option>
+        <option>Brightness</option>
+        <option>Contrast</option>
+        <option>Blur</option>
+    </select>
+    <button class="cldevbtn" id="iebtn1" onclick="borradcli()">Border Radius</button>
+    <button class="cldevbtn" id="iebtn2" onclick="boriecli()">Border</button>
+    <button class="cldevbtn" id="iebtn3" onclick="borroti()">Rotate</button>
+    <button class="cldevbtn" id="iebtn4" onclick="iechagim()">Change Image</button>
+    <button class="cldevbtn" id="iebtn5" onclick="reset()">Reset</button><br/><br/>
+    <div class="iewrapper">
+        <div class="iegrid">Grayscale - <span id="iefiltex1"></span></div>
+        <div class="iegrid">Sepia - <span id="iefiltex2"></span></div>
+        <div class="iegrid">Saturate - <span id="iefiltex3"></span></div>
+        <div class="iegrid">Hue Rotate - <span id="iefiltex4"></span></div>
+        <div class="iegrid">Invert - <span id="iefiltex5"></span></div>
+        <div class="iegrid">Opacity - <span id="iefiltex6"></span></div>
+        <div class="iegrid">Brightness - <span id="iefiltex7"></span></div>
+        <div class="iegrid">Contrast - <span id="iefiltex8"></span></div>
+        <div class="iegrid">Blur - <span id="iefiltex9"></span></div>
+    </div><br/><br/>
+    </div>
+</div>
+<div class="backbtnz" align="center"><button class="closeappbtn" onclick="cphotoeditor()">Close &times;</button></div>
+</div>
+
+
+
+<!--Settings-->
+<div id="settings" class="apbtheme">
+    <br/><br/>
+    <span style=" opacity:0.9;border-radius:4px;padding:4px;" id="setbadge1">Icon - Size</span><br/><br/>  
+    <table border="0" width="80%" align="center" style="border-collapse:collapse; box-shadow:0 0 2px #000;">
+        <tr align="center">
+            <td class="seticosiz" width="33%" id="seticobtn1" onclick="seticosize('small')">Small</td>
+            <td class="seticosiz" width="34%" id="seticobtn2" onclick="seticosize('medium')">Medium</td>
+            <td class="seticosiz" width="33%" id="seticobtn3" onclick="seticosize('large')">Large</td>
+        </tr>
+    </table><hr/><br/>
+    <div align="center">
+        <span style=" opacity:0.9;border-radius:4px;padding:4px;" id="setbadge4">Power</span> ------>
+        <button onclick="mobileoff()" class="powerbutton">Power Off!</button>
+    </div>
+    <br/>
+    <div class="backbtnz" align="center"><button onclick="closesettings()" class="closeappbtn">Close &times;</button></div>
+</div>
+
+
+
+<!--Sololearn-->
+<div id="sololearn" class="apbtheme">
+    <iframe src="https://www.sololearn.com" class="ifsololearn">Your Browser does not support iframes</iframe>
+    <div class="backbtnz" align="center"><button onclick="csololearnf()" class="closeappbtn">Close &times;</button></div>
+</div>
+
+
+
+
+
+
+<!--Stopwatch-->
+<div id="stopwatch" class="apbtheme">
+    <br/>
+    <div style="font-size:40px; height:calc(100vh - 32px);overflow:scroll;" align="center">
+        <br/>&nbsp;
+        <span id="stophour">00</span> : <span id="stopminute">00</span> : <span id="stopsecond">00</span> <span style="font-size:20px;" id="stopmsecond">00</span>
+        <br/>
+        <button class="cldevbtn" id="swstart" onclick="clockinterval = setInterval(countstopwatch, 10); this.disabled=true;">Start</button>
+        <button class="cldevbtn" onclick="clearInterval(clockinterval); document.getElementById('swstart').disabled = false;" >Pause</button>
+        <button class="cldevbtn" onclick="swlap()">Lap</button>
+        <button class="cldevbtn" onclick="resetsw()">Reset</button>
+        <br/>&nbsp;
+        <table style="border-collapse:collapse; font-size:16px;" border="1" width="90%" align="center" id="tabforlap"></table>
+        <br/>
+    </div>
+    <div class="backbtnz" align="center"><button class="closeappbtn" onclick="closestopwatch()">Close &times;</button></div>
+ </div>
+
+
+
+<!--Terminal-->
+<div class="apbtheme" style="background-color:#000;" id="materminal">
+    <div id="mterminal" style="height:calc(100vh - 34px); overflow:scroll;" class="terminal">
+        <br/>Hello World!<br/>Type in 'help'
+    </div>
+    <button onclick="closeterminal()" class="closetermbtn" id="closetermbtn">Close &times;</button>
+    <form onsubmit="return false">
+        <input type="text" class="terminaltext" id="terminalinput" autofocus="on" autocomplete="off" />
+        <button onclick="workterminal()" class="sendtermmsg" id="sendtermmsg"><i class="fa fa-angle-right"></i>_</button>
+    </form>
+</div>
+
+
+
+<!--TextEditor-->
+<div id="texteditor" class="apbtheme" style="border-bottom:1px solid #ddd;">
+    <button onclick="showtebar()" id="teshowbtn" class="texteditbutton" style="padding:8px; position:fixed; bottom:0; right:0; display:none;">Show tab</button><br/>
+    <div style="padding:10px; height:75%; overflow:scroll;" contenteditable="true" id="texteditorcontent">Hello World!</div><br/>
+    <div style="position:fixed; z-index:2; bottom:0;padding:10px; width:95%; background-color:#a0a0a0;" id="tetab">
+        <button onclick="boldthis()" class="texteditbutton" id="textedit1"><i class="fa fa-bold fa-fw"></i></button>
+        <button onclick="italicthis()" class="texteditbutton" id="textedit2"><i class="fa fa-italic fa-fw"></i></button>
+        <button onclick="underlinethis()" class="texteditbutton" id="textedit3"><i class="fa fa-underline fa-fw"></i></button>
+        <button onclick="alignthis('left')" class="texteditbutton" id="textedit4"><i class="fa fa-align-left fa-fw"></i></button>
+        <button onclick="alignthis('center')" class="texteditbutton" id="textedit5"><i class="fa fa-align-center fa-fw"></i></button>
+        <button onclick="alignthis('right')" class="texteditbutton" id="textedit6"><i class="fa fa-align-right fa-fw"></i></button>
+        <button onclick="alignthis('justify')" class="texteditbutton" id="textedit7"><i class="fa fa-align-justify fa-fw"></i></button>
+        <button onclick="shadowthis()" class="texteditbutton" id="textedit8">Shadow</button>
+        <button class="texteditbutton"><i class="fa fa-text-height fa-fw"></i></button>
+        <input type="range" min="12" max="50" class="volumeslider" id="fontsize" oninput="fontsizethis(this.value)" value="16" />
+        <select id="tefont" style="font-size:18px" onchange="tefont()">
+            <option class="tebarlow">Barlow</option>
+            <option class="tebaloobhaijaan">Baloo Bhaijaan</option>
+            <option class="tecaveat">Caveat</option>
+            <option class="teindieflower">Indie Flower</option>
+            <option class="temonoton">Monoton</option>
+            <option class="tepattaya">Pattaya</option>
+            <option class="tesatisfy">Satisfy</option>
+            <option class="teshadowsintolight">Shadows into Light</option>
+            <option class="tespicyrice">Spicy Rice</option>
+        </select>
+        <input type="color" id="tecolpal" onchange="techangecol()" />
+        <button onclick="document.getElementById('texteditorcontent').innerHTML = '';" class="texteditbutton">Clear</button>
+        <button onclick="hidetebar()" class="texteditbutton">Hide tab</button> &nbsp;<button class="closeappbtn"  onclick="ctexteditor()">Close &times;</button> &nbsp;
+    </div>
+</div>
+
+
+
+<!--Themes-->
+<div id="themesz" class="apbtheme" align="center">
+    <br/><br/>
+    <span style="float:left; opacity:0.9;border-radius:4px;padding:4px;" id="setbadge3">Select a Theme</span><br/><br/>
+    <div onclick="themcolo('ff691f');navigator.vibrate(50);" class="themcolo themcolo1">&nbsp;</div>
+    <div onclick="themcolo('fab81e');navigator.vibrate(50);" class="themcolo themcolo2">&nbsp;</div>
+    <div onclick="themcolo('7fdbb6');navigator.vibrate(50);" class="themcolo themcolo3">&nbsp;</div>
+    <div onclick="themcolo('19cf86');navigator.vibrate(50);" class="themcolo themcolo4">&nbsp;</div>
+    <div onclick="themcolo('91d2fa');navigator.vibrate(50);" class="themcolo themcolo5">&nbsp;</div>
+    <div onclick="themcolo('1b95e0');navigator.vibrate(50);" class="themcolo themcolo6">&nbsp;</div>
+    <div onclick="themcolo('abb8c2');navigator.vibrate(50);" class="themcolo themcolo7">&nbsp;</div>
+    <div onclick="themcolo('e81c4f');navigator.vibrate(50);" class="themcolo themcolo8">&nbsp;</div>
+    <div onclick="themcolo('f58ea8');navigator.vibrate(50);" class="themcolo themcolo9">&nbsp;</div>
+    <div onclick="themcolo('981ceb');navigator.vibrate(50);" class="themcolo themcolo10">&nbsp;</div><br/><br/>
+    <div id="themedef" style="display: none;">
+        <span style="float:left; opacity:0.9;border-radius:4px;padding:4px;" id="setbadge6">Define</span><br/><br/>
+        <input type="color" id="inpcol" onchange="themcolo((this.value).substring(1))" />
+    </div>
+    <div class="backbtnz" align="center"><button onclick="cthemes()" class="closeappbtn" id="clbtn">Close &times;</button></div>
+</div>
+
+
+
+<!--Unit Converter-->
+<div class="apbtheme" id="unitconveter">
+    <br/>
+    <div class="unitccon" align="center">
+        <br/>
+        <div class="unitconlist" onclick="document.getElementById('uclength').style.width='100%'"><i class="fa fa-arrows-v fa-fw"></i> Length</div>
+        <div class="unitconlist" onclick="document.getElementById('ucweight').style.width='100%'"><i class="fa fa-thermometer fa-fw"></i> Temperature</div>
+        <div class="unitconlist" onclick="document.getElementById('ucbinary').style.width='100%';"><i class="fa fa-file-code-o fa-fw"></i> ASCII Converter</div>
+    </div>
+    <div class="backbtnz" align="center"><button onclick="cunitconverter()" class="closeappbtn" id="clbtn">Close &times;</button></div>
+</div>
+<div class="apbtheme" id="uclength">
+    <div class="unitccon">
+    <br/><br/>
+    <h2 align="center">Length <i class="fa fa-arrows-v fa-fw"></i></h2>
+Centimeter
+    <input type="number" class="inputmaad" id="inpcentimeter" oninput="uccentimeter(this.value)"/><br/>
+    Meter
+    <input type="number" class="inputmaad" id="inpmeter"  oninput="ucmeter(this.value)" /><br/>
+    Kilometer
+    <input type="number" class="inputmaad" id="inpkilometer" oninput="uckilometer(this.value)" /><br/>
+    Inch
+    <input type="number" class="inputmaad" id="inpinch" oninput="ucinch(this.value)" /><br/>
+    Foot
+    <input type="number" class="inputmaad" id="inpfoot" oninput="ucfoot(this.value)" /><br/>
+    Yard
+    <input type="number" class="inputmaad" id="inpyard" oninput="ucyard(this.value)" /><br/>
+    Mile
+    <input type="number" class="inputmaad" id="inpmile" oninput="ucmile(this.value)" /><br/>&nbsp;
+</div>
+    <div class="backbtnz" align="center"><button onclick="document.getElementById('uclength').style.width = '0';" class="closeappbtn">Back <i class="fa fa-arrow-left"></i></button></div>
+</div>
+<!--Temperature-->
+<div class="apbtheme" id="ucweight">
+    <div class="unitccon">
+    <br/><br/>
+    <h2 align="center">Temperature <i class="fa fa-thermometer fa-fw"></i></h2>
+Fahrenheit
+<input type="number" class="inputmaad" id="ufahrenheit" oninput="ucfahrenheit(this.value)" /><br/>
+Celsuis
+<input type="number" class="inputmaad" id="ucelsius" oninput="uccelsius(this.value)" /><br/>
+Kelvin
+<input type="number" class="inputmaad" id="ukelvin" oninput="uckelvin(this.value)" />
+</div>
+<div class="backbtnz" align="center"><button onclick="document.getElementById('ucweight').style.width = '0';" class="closeappbtn">Back <i class="fa fa-arrow-left"></i></button></div>
+</div>
+<!--Binary Converter -->
+<div class="apbtheme" id="ucbinary">
+    <div class="unitccon">
+<br/><br/>
+<h2 align="center">ASCII Converter <i class="fa fa-file-code-o fa-fw"></i></h2>
+Text
+<textarea class="textarearep" id="binctext" rows="6" oninput="convtetb(this.value);" onchange="convtetb(this.value);" row="5"></textarea><br/><br/>
+ASCII
+<textarea class="textarearep" id="bincbin" rows="6" disabled></textarea><br/>&nbsp;
+</div>
+<div class="backbtnz" align="center"><button onclick="document.getElementById('ucbinary').style.width = '0';" class="closeappbtn">Back <i class="fa fa-arrow-left"></i></button></div>
+</div>
+
+
+
+<!--Video-->
+<div id="vidplayer" class="apbtheme"><br/><br/>
+<center><iframe  id="youtubeid" class="vidiframe" allowfullscreen="allowfullscreen" mozallowfullscreen="mozallowfullscreen" msallowfullscreen="msallowfullscreen" oallowfullscreen="oallowfullscreen" webkitallowfullscreen="webkitallowfullscreen"></iframe></center><br/>
+<center><button onclick="playytv(0); this.style.display='none';" id="videoplbtn" class="cldevbtn">Play</button> <button onclick="prevvid()" class="cldevbtn">Prev</button> <button onclick="nextvid()" class="cldevbtn">Next</button> <button class="closeappbtn" onclick="cvideos()">Close &times;</button><br/>
+<input type="text" class="videoinputuser" id="videouserinput" placeholder="Enter YouTube video link" /> <button onclick="adduservideo()" class="cldevbtn" style="margin-top:3px;">ADD +</button></center>
+<h3 id="videoexp"></h3>
+<div class="videolist" id="videolistj">
+    <div class="videoitem" id="videoitem0" onclick="playytv(0)">SoloLearn Introduction</div>
+    <div class="videoitem" id="videoitem1" onclick="playytv(1)">SoloLearn: Anything Coding</div>
+    <div class="videoitem" id="videoitem2" onclick="playytv(2)">Ping Pong Trick Shots</div>
+    <div class="videoitem" id="videoitem3" onclick="playytv(3)">The art of writing software</div>
+    <div class="videoitem" id="videoitem4" onclick="playytv(4)">GOOD STUDENTS vs BAD STUDENTS</div>
+    <div class="videoitem" id="videoitem5" onclick="playytv(5)">Titu Talks- Episode 1</div>
+    <div class="videoitem" id="videoitem6" onclick="playytv(6)">Types Of Fake People</div>
+    <div class="videoitem" id="videoitem7" onclick="playytv(7)">250,000 Dominoes</div>
+    <div class="videoitem" id="videoitem8" onclick="playytv(8)">A Robot shoots, when get hit in Fortnite</div>
+    <div class="videoitem" id="videoitem9" onclick="playytv(9)">Tom & Jerry</div>
+    <div class="videoitem" id="videoitem10" onclick="playytv(10)">Charlie Chaplin - The Dentist</div>
+    <div class="videoitem" id="videoitem11" onclick="playytv(11)">How to Learn to Code</div>
+    <div class="videoitem" id="videoitem12" onclick="playytv(12)">Coding is not difficult</div>
+    <div class="videoitem" id="videoitem13" onclick="playytv(13)">Apna Mahi Ayega</div>
+</div>
+</div>
+<script src="android.js">
+
+</script>
+<script>
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
